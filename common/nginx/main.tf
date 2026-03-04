@@ -15,7 +15,7 @@ variable "prefix" {
 }
 
 resource "random_string" "name" {
-    length = 1
+    length = 5
     special = false
 }
 

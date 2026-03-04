@@ -38,6 +38,30 @@ component "app-rev-proxy" {
   }
 }
 
+component "app-network" {
+  source = "git::https://github.com/arunatibm/network.git"
+
+  inputs = {
+    prefix = var.prefix
+  }
+
+  providers = {
+    random = provider.random.this
+  }
+}
+
+component "app-compute" {
+  source = "git::https://github.com/arunatibm/compute.git//modules/compute"
+
+  inputs = {
+    prefix = var.prefix
+  }
+
+  providers = {
+    random = provider.random.this
+  }
+}
+
 output "store-cache" {
   description = "Cache component for the online store"
   type = string
