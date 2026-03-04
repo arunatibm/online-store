@@ -77,3 +77,19 @@ output "store-rev-proxy" {
   sensitive = false
   ephemeral = false
 }
+
+output "store-network" {
+  description = "Network component for the online store"
+  type = string
+  value = component.app-network.name
+  sensitive = false
+  ephemeral = false
+}
+
+output "store-compute" {
+  description = "Compute component for the online store"
+  type = string
+  value = component.app-compute.name
+  sensitive = false
+  ephemeral = false
+}
